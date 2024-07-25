@@ -6,6 +6,7 @@ folders = {
     "image" : ["img", "png", "jpg", "jpeg"],
     "deb" : ["deb"],
 }
+
 def assign_folder(extension:str)->str | bool:
     for folder_name in folders:
         # print(folder_name)
@@ -18,11 +19,12 @@ def assign_folder(extension:str)->str | bool:
         
 folder_name = assign_folder("pdf")
 print(folder_name)
-# for i in os.listdir(folder_path):
-#     # print(i)
-#     if "." in i:
-#         # print("file")
-#         extention = i.split(".")[1]
-#         print(extention)
-#     else:
-#         print("folder")
+for i in os.listdir(folder_path):
+    # print(i)
+    if "." in i:
+        # print("file")
+        extention = i.split(".")[1]
+        print(extention)
+        folder_name =  assign_folder(extention)
+    else:
+        print("folder")
